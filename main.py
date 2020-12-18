@@ -2,7 +2,6 @@ from flask import Flask, render_template
 import pandas as pd
 import flask_jsonpify
 import json
-from django.core.serializers.json import DjangoJSONEncoder
 
 all_com = json.loads(pd.read_csv('data/all_com.csv', encoding='cp949').to_json(orient='columns', force_ascii=False))
 all_relay = json.loads(pd.read_csv('data/all_relay.csv', encoding='cp949').to_json(orient='columns', force_ascii=False))
@@ -18,7 +17,7 @@ def home():
 
 @app.route('/req',methods=['POST'])
 def load_data():
-    return flask_jsonpify.jsonify({0:all_com,1:all_relay,2:jb_com,3:jb_relay,4:jj_com,5:jj_relay})
+    return flask_jsonpify.jsonify({0:all_com,1:jj_com,2:jb_com,3:all_relay,4:jj_relay,5:jb_relay})
 
 if __name__ == '__main__':
     app.run(debug=True)

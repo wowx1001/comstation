@@ -12,8 +12,8 @@ $.ajax({
 var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
-        center: new kakao.maps.LatLng(36.2998973,127.4788872), // 지도의 중심좌표
-        level: 12 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(35.3666091,127.505225), // 지도의 중심좌표
+        level: 13 // 지도의 확대 레벨
     };
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
@@ -28,8 +28,8 @@ var index_name = ['type','field_strength','bigo'];
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수
 function addMarker(position, idx) {
-    var imageSrc = "{{url_for('static', filename='img/1.png')}}", // 마커 이미지 url, 스프라이트 이미지를 씁니다
-        imageSize = new kakao.maps.Size(35, 35),  // 마커 이미지의 크기
+    var imageSrc = "https://github.com/wowx1001/comstation/blob/master/static/img/"+(idx%3==0?"1":(idx%3==1?"2":"3"))+".png?raw=true", // 마커 이미지 url, 스프라이트 이미지를 씁니다
+        imageSize = new kakao.maps.Size(17, 17),  // 마커 이미지의 크기
         markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize),
         marker = new kakao.maps.Marker({
             position: position, // 마커의 위치
@@ -44,7 +44,7 @@ function addMarker(position, idx) {
 
 // 조회된 데이터의 인포윈도우 창 추가
 function displayInfowindow(marker,loc,type,field_strength,bigo) {
-    var content = '<div style="width:230px;"><div>'+(type?(' 유형 : '+type):"")+'</div>'+
+    var content = '<div style="font-size:11px; padding:15px;"><div>'+(type?(' 유형 : '+type):"")+'</div>'+
     '<div>'+(loc?(' 위치 : '+loc):"")+'</div>'+
     '<div>'+(field_strength?(' 전계강도 : '+field_strength):"")+'</div>'+
     '<div>'+(bigo?(' 비고 : '+bigo):"")+'</div></div>';

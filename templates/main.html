@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <title>지도 생성하기</title>
     <style>
@@ -8,12 +10,45 @@
             padding:0 0;margin:0 0;
             width:100%;
             height:100%;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #modal div img{
+            width:13.5px;
+            height:13.5px;
+        }
+        #modal div label{
+            font-size:13.5px;
+            
+        }
+        #modal div{
+            text-align: right;
+        }
+        #modal{
+            
+            position:absolute; padding:15px; top:10px; right:10px; z-index: 99; background-color: rgba(255,255,255,0.8); 
+            border-radius: 5px;
+            font-size: 11px;
         }
     </style>
 </head>
 <body>
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:100%;height:100%;padding:0 0;margin:0 0;"></div>
+<div id="modal">
+    <div style="text-align: center; margin-top: 10px; margin-bottom: 10px; font-size: 14px;">&lt;송신소 & 중계소&gt;</div>
+    <div>
+        <label for="img1">전국 : </label>
+        <img id="img1" src="https://github.com/wowx1001/comstation/blob/master/static/img/1.png?raw=true"></img>
+    </div>
+    <div>
+        <label for="img2">전북방송 : </label>
+        <img id="img2" src="https://github.com/wowx1001/comstation/blob/master/static/img/2.png?raw=true"></img>
+    </div>
+    <div>
+        <label for="img3">제주방송 : </label>
+        <img id="img3" src="https://github.com/wowx1001/comstation/blob/master/static/img/3.png?raw=true"></img>
+    </div>
+</div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a80af12394f9221f050304527303a2e8"></script>
 <script src="https://code.jquery.com/jquery-latest.min.js" type="application/javascript"></script>
 <script src="{{url_for('static', filename='js/main.js')}}"></script>
