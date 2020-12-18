@@ -20,4 +20,4 @@ def load_data():
     return flask_jsonpify.jsonify({0:all_com,1:jj_com,2:jb_com,3:all_relay,4:jj_relay,5:jb_relay})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)
