@@ -11,5 +11,6 @@
 ### &nbsp;&nbsp;&nbsp;&nbsp; 5. main.py의 host 부분을 자신의 고정 ip에 맞게 수정한 뒤 main.py을 실행  
 
 ## 실행 결과
-<img src=""></img>  
+<img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot1.png?raw=true"></img>
+<img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot2.png?raw=true"></img>  
 
