@@ -14,8 +14,44 @@ var infowindow = new kakao.maps.InfoWindow({
 });
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수
-function addMarker(position, idx) {
-    var imageSrc = "https://github.com/wowx1001/comstation/blob/master/static/img/1.png?raw=true", // 마커 이미지 url, 스프라이트 이미지를 씁니다
+function addMarker(position, f_s) {
+    var f_s_case = parseFloat(f_s);
+    switch (true) {
+        case f_s_case > 50.6 :
+            imgnumber = '10';
+            break;
+        case f_s_case > 46.2 :
+            imgnumber = '9';
+            break;
+        case f_s_case > 41.8 :
+            imgnumber = '8';
+            break;
+        case f_s_case > 37.4 :
+            imgnumber = '7';
+            break;
+        case f_s_case > 33 :
+            imgnumber = '7';
+            break;
+        case f_s_case > 28.6 :
+            imgnumber = '6';
+            break;
+        case f_s_case > 24.2 :
+            imgnumber = '5';
+            break;    
+        case f_s_case > 19.8 :
+            imgnumber = '4';
+            break;    
+        case f_s_case > 15.4 :
+            imgnumber = '3';
+            break;    
+        case f_s_case > 11 :
+            imgnumber = '2';
+            break;    
+        default :
+            imgnumber = '1';
+            break;
+      }
+    var imageSrc = "https://github.com/wowx1001/comstation/blob/master/static/img/"+imgnumber+".png?raw=true", // 마커 이미지 url, 스프라이트 이미지를 씁니다
         imageSize = new kakao.maps.Size(15, 15),  // 마커 이미지의 크기
         markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize),
         marker = new kakao.maps.Marker({
@@ -69,7 +105,7 @@ function draw_marker(data){
     for ( var i=0; i<Object.keys(data['번호']).length; i++ ) {
         // 마커를 생성하고 지도에 표시합니다
         var placePosition = new kakao.maps.LatLng(parseFloat(data['위도'][i]), parseFloat(data['경도'][i])),
-        marker = addMarker(placePosition, data['구분'][i]);
+        marker = addMarker(placePosition, data['전계강도(dB㎶/m)'][i]);
         type = data['구분'][i];
         f_s = data['전계강도(dB㎶/m)'][i];
         freq = data['주파수'][i];
@@ -112,13 +148,19 @@ $.ajax({
     }
 })
 $.ajax({
-type: 'POST',
-url: '/tw',
-contentType: "application/json",
-success: function(data){
-    all_region_marker(data);
-},
-error: function(){
-    alert('ajax 통신 실패');
-}
+    type: 'POST',
+    url: '/tw',
+    contentType: "application/json",
+    success: function(data){
+        all_region_marker(data);
+    },
+    error: function(){
+        alert('ajax 통신 실패');
+    }
 })
+
+$( document ).ready(function() {
+    for(i=1;i<11;i++){
+        $('#img-list').append("<li><img src='https://github.com/wowx1001/comstation/blob/master/static/img/"+String(i)+".png?raw=true'></img></li>");        
+    }
+});
