@@ -10,7 +10,7 @@
 ### &nbsp;&nbsp;&nbsp;&nbsp; 4. https://apis.map.kakao.com/ 에서 카카오 맵 api 키 발급후 templates/main.html에 api키를 수정
 ### &nbsp;&nbsp;&nbsp;&nbsp; 5. https://developers.kakao.com/ -> 내 애플리케이션 -> 플랫폼에서 web 애플리케이션을 추가
 ### &nbsp;&nbsp;&nbsp;&nbsp; 6. 사이트 도메인에 ec2 ipv4 주소와 포트를 추가.(ex.http://127.0.0.1:5000)
-### &nbsp;&nbsp;&nbsp;&nbsp; 7. 클라우드 환경에서 python3 main.py 타이핑
+### &nbsp;&nbsp;&nbsp;&nbsp; 7. 클라우드 환경 root directory에서 source flask/bin/activate 타이핑 -> python3 main.py 타이핑
 
 ## 실행 결과
 <img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot1.png?raw=true"></img>
