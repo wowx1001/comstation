@@ -140,6 +140,7 @@ $.ajax({
     type: 'POST',
     url: '/req',
     contentType: "application/json",
+    async: false,
     success: function(data){
         draw_marker(data);
     },
@@ -151,6 +152,7 @@ $.ajax({
     type: 'POST',
     url: '/tw',
     contentType: "application/json",
+    async: false,
     success: function(data){
         all_region_marker(data);
     },
