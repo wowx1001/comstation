@@ -13,7 +13,7 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp; 7. 클라우드 환경 root directory에서 source flask/bin/activate 타이핑 -> 프로젝트 폴더에서 python3 main.py 타이핑
 #### &nbsp;&nbsp;&nbsp;&nbsp; 8. 서버가 켜지면 웹브라우저에서 ipv4 주소와 포트를 입력하여 접속 (ex. http://0.0.0.0:5000)
 
-## 실행 결과
+## 실행 결과(* 송신소/중계소 탑 아이콘 색상 변경됨)
 <img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot1.png?raw=true"></img>
 <img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot2.png?raw=true"></img>  
 <img src="https://github.com/wowx1001/comstation/blob/master/screenshot/shot3.png?raw=true"></img>
